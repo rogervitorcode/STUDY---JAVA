@@ -1,0 +1,100 @@
+POO não é só teoria — é um paradigma de programação que te ajuda a organizar o código de forma realista, modular e reutilizável.
+Ao invés de pensar em funções soltas, você pensa em objetos que representam “coisas de verdade” com:
+
+Estado (atributos)
+
+Comportamento (métodos)
+
+Java é uma linguagem baseada em objetos, então tudo gira em torno disso.
+
+OS 4 PILARES DO JAVA.
+IMPORTANTE PRESTAR ATENÇÃO, E LER ANTES DE CODAR
+1️⃣ Encapsulamento — proteger dados
+
+O que é?
+Separar o que o objeto tem de como ele guarda isso — proteção de dados.
+
+Exemplo:
+public class Pessoa {
+    private String nome; // ninguém acessa direto
+
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+
+👉 Aqui usamos private para esconder a variável e get/set para controlar o acesso.
+
+2️⃣ Herança — reaproveitar código
+
+O que é?
+Uma classe pode herdar atributos e métodos de outra.
+
+Exemplo:
+class Animal {
+    public void som() {
+        System.out.println("Som genérico");
+    }
+}
+
+class Cachorro extends Animal {
+}
+
+Cachorro dog = new Cachorro();
+dog.som(); // usa o método da classe pai
+
+
+👉 extends quer dizer “é um tipo de”.
+
+3️⃣ Polimorfismo — mesma coisa, comportamento diferente
+
+O que é?
+Um mesmo método pode se comportar de maneiras diferentes dependendo do objeto.
+
+Exemplo:
+class Animal {
+    public void som() {
+        System.out.println("Som genérico");
+    }
+}
+
+class Gato extends Animal {
+    public void som() {
+        System.out.println("Miau");
+    }
+}
+
+class Cachorro extends Animal {
+    public void som() {
+        System.out.println("Au au");
+    }
+}
+
+Animal a = new Cachorro();
+a.som(); // "Au au"
+
+
+👉 Mesmo sendo tipo Animal, o método muda dependendo de quem está usando.
+
+4️⃣ Abstração — focar no essencial
+
+O que é?
+Mostrar só o que importa e esconder como funciona.
+
+Exemplo:
+interface Pagamento {
+    void pagar();
+}
+
+class Cartao implements Pagamento {
+    public void pagar() {
+        System.out.println("Pago com cartão");
+    }
+}
+
+
+👉 A interface diz o que deve ser feito (pagar), mas não diz como.
