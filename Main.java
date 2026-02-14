@@ -1,27 +1,14 @@
-package javac;
-
+package atividades;
 public class Main {
 
     public static void main(String[] args) {
+        Carro meuCarro = new Carro(); // cria um objeto da classe Carro
 
-        Car myCar = new Car("fusca");
-        Car myCar1 = new Car("Sandero");
-        Car myCar2 = new Car("BMW");
+        // atribuindo valores aos atributos
+        meuCarro.marca = "Toyota";
+        meuCarro.ano = 2022;
 
-        myCar1.acelerar();
-        myCar2.acelerar();
-        myCar.acelerar();
-        Abstract meuHumano = new Humano();
-        meuHumano.respira();
+        // chamando o método para mostrar informações
+        meuCarro.mostrarInfo();
     }
-}
-class Car {
-    String modelo;
-    public Car(String modelo) {
-       this.modelo = modelo;
-    }
-    public void acelerar() {
-        System.out.println("Acelerando o carro a 38km "+this.modelo);
-    }
-
 }
